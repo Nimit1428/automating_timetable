@@ -6,4 +6,5 @@ print(datetime.time(datetime.now()))
 
 start = 1
 while(start):
-    print("SchoolTime")
+    print("School Time")
+    start = 0
