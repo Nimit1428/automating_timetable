@@ -2,16 +2,23 @@ import pyautogui as pag
 import time
 from pw import email,password
 
+
 def open_teams():
 
     #start menu
-    loc=pag.locateOnScreen('./images/start.png')
-    center=pag.center(loc)
-    pag.moveTo(x=center.x,y=center.y)
-    pag.click(button='left', clicks=1)
-    pag.write('teams',interval=1)
+    # loc=pag.locateOnScreen('./images/start.png')
+    # center=pag.center(loc)
+    # pag.moveTo(x=center.x,y=center.y)
+    # pag.click(button='left', clicks=1)
+    # pag.write('teams',interval=1)
+    # pag.press('enter')
+    # time.sleep(8)
+    pag.hotkey('win')
+    time.sleep(1)
+    pag.write('teams', interval=1)
     pag.press('enter')
     time.sleep(8)
+    join_class()
 
     #enter email
     pag.write(email)
@@ -39,37 +46,52 @@ def open_teams():
         pag.click(button='left',clicks=1)
         time.sleep(1)
 
-    #maximize screen
-    pag.keyDown('alt')
-    pag.press(' ')
-    pag.press('x')
-    pag.keyUp('alt')
-    pag.press('enter')
-    time.sleep(10)
+    # maximize screen
+    # pag.keyDown('alt')
+    # pag.press(' ')
+    # pag.press('x')
+    # pag.keyUp('alt')
+    # pag.press('enter')
+    # time.sleep(10)
+
     join_class()
+
+
 
 #joining class
 #add images of all class. sirf logo rakhna text nai
 def join_class():
     time.sleep(2)
     loc=pag.locateOnScreen('./images/trial.png')
-    print(loc)
-    print(pag.center(loc))
+    # print(loc)
+    # print(pag.center(loc))
     center=pag.center(loc)
     pag.moveTo(x=center.x,y=center.y)
     pag.click(button='left',clicks=1)
     time.sleep(3)
     join_meeting()
 
-#join perticular meeting in class
-def join_meeting():
-    loc=pag.locateOnScreen('./images/join.png')
+
+def search_and_click(img):
+    loc=pag.locateOnScreen(img)
     if(loc):
         print(loc)
         print(pag.center(loc))
         center=pag.center(loc)
         pag.moveTo(x=center.x,y=center.y)
         pag.click(button='left',clicks=1)
+
+
+#join perticular meeting in class
+def join_meeting():
+    search_and_click('./images/join.png')
+    # loc=pag.locateOnScreen('./images/join.png')
+    # if(loc):
+    #     print(loc)
+    #     print(pag.center(loc))
+    #     center=pag.center(loc)
+    #     pag.moveTo(x=center.x,y=center.y)
+    #     pag.click(button='left',clicks=1)
 
     #maximize the screen
     pag.keyDown('alt')
@@ -81,29 +103,32 @@ def join_meeting():
     time.sleep(3)
 
     #mute audio
-    loc=pag.locateOnScreen('./images/audio.png')
-    if(loc):
-        print(loc)
-        print(pag.center(loc))
-        center=pag.center(loc)
-        pag.moveTo(x=center.x,y=center.y)
-        pag.click(button='left',clicks=1)
+    search_and_click('./images/audio.png')
+    # loc=pag.locateOnScreen('./images/audio.png')
+    # if(loc):
+    #     print(loc)
+    #     print(pag.center(loc))
+    #     center=pag.center(loc)
+    #     pag.moveTo(x=center.x,y=center.y)
+    #     pag.click(button='left',clicks=1)
 
     #turn off video
-    loc=pag.locateOnScreen('./images/video.png')
-    if(loc):
-        print(loc)
-        print(pag.center(loc))
-        center=pag.center(loc)
-        pag.moveTo(x=center.x,y=center.y)
-        pag.click(button='left',clicks=1)
+    search_and_click('./images/video.png')
+    # loc=pag.locateOnScreen('./images/video.png')
+    # if(loc):
+    #     print(loc)
+    #     print(pag.center(loc))
+    #     center=pag.center(loc)
+    #     pag.moveTo(x=center.x,y=center.y)
+    #     pag.click(button='left',clicks=1)
     
     #join meetin now
-    loc=pag.locateOnScreen('./images/join_now.png')
-    center=pag.center(loc)
-    pag.moveTo(x=center.x,y=center.y)
-    pag.click(button='left',clicks=1)
-    stay_online()
+    search_and_click('./images/join_now.png')
+    # loc=pag.locateOnScreen('./images/join_now.png')
+    # center=pag.center(loc)
+    # pag.moveTo(x=center.x,y=center.y)
+    # pag.click(button='left',clicks=1)
+    # stay_online()
 
 #sleep mode me na jai esliye
 def stay_online():
@@ -134,8 +159,9 @@ def teams_screen():
     pag.moveTo(x=center.x,y=center.y)
     pag.click(button='left',clicks=1)
 
-open_teams()
+# open_teams()
 # join_class()
-# join_meeting()
+join_meeting()
 # teams_screen()
+
 
