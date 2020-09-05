@@ -7,5 +7,4 @@ print(datetime.time(datetime.now()))
 start = 1
 while(start):
     print("School Time")
-
     start = 0
