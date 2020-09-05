@@ -61,7 +61,7 @@ class Teams:
         self.search_and_click('video1')
         self.search_and_click('audio')
         self.search_and_click('join_now')
-        # self.maximize()
+        self.maximize()
 
     def stay_online(self):
         # self.start_time=start_time
