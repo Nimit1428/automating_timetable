@@ -56,7 +56,7 @@ class Teams:
         self.search_and_click('audio')
         sleep(1)
         self.search_and_click('join_now')
-        # self.maximize()
+        self.maximize()
 
 
 obj = Teams()

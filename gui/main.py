@@ -23,6 +23,9 @@ zoom = ImageTk.PhotoImage(Image.open("./Logo/zoom.png"),width="225",height="225"
 zm = Button(wingman, image = zoom)
 zm.pack(side = "left", fill = "none", expand = "no")
 
+stng = ImageTk.PhotoImage(Image.open("./Logo/settings.png"))
+sg = Button(wingman, image = stng,width="50",height="50",command = lambda:Settings())
+sg.pack(side = "right", fill = "none", expand = "no")
 
 '''upload=Button(wingman,text="Upload your \n time table",command = lambda:open_file())
 upload.pack(side = "left", fill = "none", expand = "no")'''
@@ -32,11 +35,10 @@ teams = PhotoImage(file =r".\Logo\teams.png")
 mic_teams=Button(wingman,image=teams)
 '''
 def LoginPage():
-   
     login_screen=Tk()
     login_screen.title("Login")
-    login_screen.geometry("300x250")
-    
+    login_screen.geometry("300x500")
+     
     Label(login_screen, text="Please enter login details").pack()
     Label(login_screen, text="").pack()
     Label(login_screen, text="Username").pack()
@@ -53,22 +55,33 @@ def LoginPage():
     password__login_entry.pack()
     
     Label(login_screen, text="").pack()
-    Button(login_screen,text="Upload your time table",command=lambda:open_file(), width=20, height=1).pack()
-    
+    #Button(login_screen,text="Upload your time table",command=lambda:open_file(), width=20, height=1).pack()
+    '''
     def butn():
-        print(username_login_entry.get())
-        print(password__login_entry.get())   
-        print(type(username_login_entry))
+           print(username_login_entry.get())
+           print(password__login_entry.get())   
+           print(type(username_login_entry))'''
     #login button
-    Button(login_screen, text="Login",command=butn, width=10, height=1).pack()
-    def open_file(): 
-        tt = askopenfile(mode ='r', filetypes =[('PDF', '*.pdf')]) 
+
+    Button(login_screen, text="Login",command=login_screen.destroy, width=10, height=1).pack()
+    
+
+       
+    '''def open_file(): 
+        tt = askopenfile(mode ='r', filetypes =[('PDF', '*.pdf')])  
         if tt is not None: 
             print("Hello")
+    '''
+
     
 
     login_screen.mainloop()
     
+
+def Settings():
+    print("hello")
+    login_screen = Tk()
+
 
 '''
 class App():
