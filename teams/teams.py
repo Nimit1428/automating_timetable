@@ -25,7 +25,7 @@ class Teams:
         sleep(1)
         pag.write('teams',interval=0.25)
         pag.press('enter')
-        sleep(7)
+        sleep(8)
         # self.maximize()
 
     def login(self,email,password):
@@ -41,6 +41,9 @@ class Teams:
         self.search_and_click('signin')
         sleep(2)
 
+    def teams_menu(self):
+        self.search_and_click('teams')
+
     def join_team(self,team_name):
         self.team_name=team_name
         self.search_and_click(team_name)
@@ -48,15 +51,32 @@ class Teams:
 
     def join_meeting(self):
         self.search_and_click('join')
-        sleep(1)
+        sleep(0.5)
         self.search_and_click('audio')
         self.search_and_click('video')
         self.search_and_click('join_now')
-        self.maximize()
+        # self.maximize()
+    
+    def stay_online(self):
+        # self.start_time=start_time
+        # self.end_time=end_time
+        # duration=60-start_time
+        # duration*=60
+        duration=5
+        while duration >= 0:
+            sleep(3)
+            # pag.moveTo(500, 150, 2)
+            duration = duration - 3
 
+    def leave_meeting(self):
+        self.search_and_click('leave')
 
 obj=Teams()
 # obj.start_teams()
 # obj.login(email,password)
-# obj.join_team('trial')
+# obj.teams_menu()
+obj.join_team('trial')
 obj.join_meeting()
+obj.stay_online()
+obj.leave_meeting()
+obj.teams_menu()
