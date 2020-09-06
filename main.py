@@ -4,8 +4,10 @@ import pyautogui as pag
 import datetime
 import calendar
 from teams import Teams
+from gui import WingMan
 from current_class import current
 from set_timetable import df_sample
+
 # GUI Returns
 
 # loggenIn = 1
@@ -45,9 +47,10 @@ from set_timetable import df_sample
 
 def main():
     obj = Teams()
-    current_class = current(df_sample)
-
-    print(current_class)
+    ongoing_class = current(df_sample)
+    gui = WingMan().homescreen()
+    user_details = gui.returndetails()
+    print(user_details)
 
 
 main()
