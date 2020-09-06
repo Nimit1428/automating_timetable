@@ -26,7 +26,7 @@ class Teams:
 
     def start_teams(self):
         pag.hotkey('win')
-        sleep(1)
+        sleep(2)
         pag.write('teams', interval=0.25)
         pag.press('enter')
         sleep(7)
@@ -41,7 +41,7 @@ class Teams:
         sleep(4)
         pag.write(password, interval=0.25)
         pag.press('enter')
-        sleep(3)
+        sleep(2)
         self.search_and_click('allow_permissions')
         self.search_and_click('signin')
         sleep(2)
@@ -49,11 +49,9 @@ class Teams:
     def teams_menu(self):
         self.search_and_click('teams')
 
-    def join_team(self, team_name, team_name1, team_name2):
+    def join_team(self, team_name):
         self.team_name = team_name
         self.search_and_click(team_name)
-        self.search_and_click(team_name1)
-        self.search_and_click(team_name2)
         sleep(2)
 
     def join_meeting(self):
@@ -84,12 +82,12 @@ class Teams:
 # print("Starting teams!")
 # obj.start_teams()
 # print("Entereing email/password")
-# obj.login(email, password)
+# obj.login('19124052@nuv.ac.in', 'rajiv@1964')
 # sleep(10)
 # print("selecting menu")
 # obj.teams_menu()
 # print("Joining team")
-# obj.join_team('t', 'trial', 't2')
+# obj.join_team('trial')
 # print("Joining meeting")
 # obj.join_meeting()
 # print("Stay online")
