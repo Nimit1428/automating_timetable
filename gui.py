@@ -16,6 +16,8 @@ class WingMan:
         login_screen = Tk()
         login_screen.title("Login")
         login_screen.geometry("300x250")
+        login_screen.maxsize(300,250)
+        login_screen.minsize(300,250)
 
         Label(login_screen, text="Please enter login details").pack()
         Label(login_screen, text="").pack()
@@ -44,9 +46,14 @@ class WingMan:
             self.wingman.destroy()
             self.returnDetails()
 
+<<<<<<< HEAD:gui/gui.py
+        Button(login_screen, text="Login",command=lambda:handleLogin(self), width=20, height=1).pack()
+        login_screen.bind('<Return>',handleLogin)
+=======
         Button(login_screen, text="Login",
                command=handleLogin, width=20, height=1).pack()
         login_screen.bind('<Return>', handleLogin)
+>>>>>>> 70b8cdec279ff0554157c78b0ad68706bedec48b:gui.py
 
         login_screen.mainloop()
 
@@ -55,7 +62,32 @@ class WingMan:
 
     def homescreen(self):
         self.wingman = Tk()
+        self.wingman.iconbitmap('./exe/gui.ico')
         self.wingman.title("WingMan")
+<<<<<<< HEAD:gui/gui.py
+        self.wingman.geometry('400x449')
+        self.wingman.maxsize(400,449)
+        self.wingman.minsize(400,449)
+        
+        bgg_image =ImageTk.PhotoImage(file='./logo/bg3.jpg')
+        bgg_label=Label(self.wingman,image=bgg_image)
+        bgg_label.place(x=0,y=0,relwidth=1,relheight=1)
+        
+        #self.wingman.configure(background='./Logo/bg.png')
+        #self.wingman.configure(background = image1)
+        
+        teams = ImageTk.PhotoImage(Image.open("./Logo/teams2.jpg"),)
+        tms = Button(self.wingman, image=teams, width="225", height="225",border=3)
+        tms.pack(pady=10)
+        
+        with_login = Button(self.wingman,command = self.login,text="Join Meeting with Login Info",font=("Helvetica", 10, "bold italic"),border=0,width="30", height="3",activeforeground = "#ffffff",activebackground = "#202020", bg='#1c2e4a', fg='#ffffff')
+        with_login.pack(pady=10)
+        
+        without_login = Button(self.wingman,text="Join meeting without Login info",font=("Helvetica", 10, "bold italic"),border=0,command=self.start_without_login,width="30", height="3",activeforeground = "#ffffff",activebackground = "#202020",bg='#1c2e4a', fg='#ffffff')
+        without_login.pack(pady=10)
+        
+
+=======
         self.wingman.geometry('700x500')
 
         teams = ImageTk.PhotoImage(Image.open(
@@ -70,6 +102,7 @@ class WingMan:
         without_login = Button(
             self.wingman, text="Join Meeting without Login info", command=self.start_without_login)
         without_login.pack(side="left", fill="none", expand="no")
+>>>>>>> 70b8cdec279ff0554157c78b0ad68706bedec48b:gui.py
 
         self.wingman.mainloop()
 
