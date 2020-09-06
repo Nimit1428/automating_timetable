@@ -20,7 +20,7 @@ import pdftables_api
 
 # df = pd.DataFrame(tt)
 
-x={'Time':['5 to 6','6 to 7','7 to 8'],'Sat':['trial','NaN','Aztechs'],'Sun':['trial','NaN','Aztechs']}
+x={'Time':['3 to 6','12 to 7','7 to 8'],'Sat':['trial','NaN','Aztechs'],'Sun':['Nan','trial','Aztechs']}
 df_sample=pd.DataFrame(x)
 
 # print(df_sample)

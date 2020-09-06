@@ -47,6 +47,7 @@ class WingMan:
         Button(login_screen, text="Login",
                command=handleLogin, width=20, height=1).pack()
         login_screen.bind('<Return>',handleLogin)
+        login_screen.bind('<Return>',handleLogin)
 
         login_screen.mainloop()
 
