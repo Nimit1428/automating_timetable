@@ -13,7 +13,6 @@ teams = ImageTk.PhotoImage(Image.open("./Logo/teams.png"),width="225",height="22
 tms = Button(wingman, image = teams,command = lambda:LoginPage())
 tms.pack(side = "left", fill = "none", expand = "no")
 
-#zoom = ImageTk.PhotoImage(Image.open("./Logo/zoom.png"),width="225",height="225")
 zm1 = Button(wingman, text="Join Meeting with Login info",command = lambda:LoginPage())
 zm1.pack(side = "left", fill = "none", expand = "no")
 
