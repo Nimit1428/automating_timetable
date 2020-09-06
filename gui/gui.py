@@ -7,7 +7,6 @@ from functools import partial
 
 
 class WingMan:
-
     def __init__(self):
         self.loginStatus=False
         self.email=''
@@ -29,24 +28,30 @@ class WingMan:
         Label(login_screen, text="").pack()
         Label(login_screen, text="Password").pack()
 
-
         # password label and password entry box
         password_login_entry = Entry(
             login_screen, textvariable="password", show='*')
         password_login_entry.pack()
+        
         Label(login_screen, text="").pack()
 
-        def handleLogin():
+        #handle button click
+        def handleLogin(e):
             self.email=email_login_entry.get()
             self.password=password_login_entry.get()
+            self.loginStatus=True
             login_screen.destroy()
             self.wingman.destroy()
             self.returnDetails()
 
         Button(login_screen, text="Login",
                command=handleLogin, width=20, height=1).pack()
-        
+        login_screen.bind('<Return>',handleLogin)
+
         login_screen.mainloop()
+
+    def start_without_login(self):
+        self.wingman.destroy()
 
     def homescreen(self):
         self.wingman = Tk()
@@ -55,8 +60,15 @@ class WingMan:
 
         teams = ImageTk.PhotoImage(Image.open(
         "./Logo/teams.png"), width="225", height="225")
-        tms = Button(self.wingman, image=teams, command=self.login)
+        tms = Button(self.wingman, image=teams)
         tms.pack(side="left", fill="none", expand="no")
+        
+        with_login = Button(self.wingman, text="Join Meeting with Login info",command = self.login)
+        with_login.pack(side = "left", fill = "none", expand = "no")
+
+        without_login = Button(self.wingman, text="Join Meeting without Login info",command=self.start_without_login)
+        without_login.pack(side = "left", fill = "none", expand = "no")
+
         self.wingman.mainloop()
     
     def returnDetails(self):
@@ -64,5 +76,5 @@ class WingMan:
 
 obj=WingMan()
 obj.homescreen()
-x=obj.returnDetails()
-print(x)
+user_details=obj.returnDetails()
+print(user_details)
