@@ -33,12 +33,12 @@ class Teams:
         self.maximize()
 
     def login(self, email, password):
-        sleep(4)
+        sleep(3)
         self.email = email
         self.password = password
         pag.write(email, interval=0.25)
         pag.press('enter')
-        sleep(3)
+        sleep(4)
         pag.write(password, interval=0.25)
         pag.press('enter')
         sleep(3)
@@ -49,9 +49,11 @@ class Teams:
     def teams_menu(self):
         self.search_and_click('teams')
 
-    def join_team(self, team_name):
+    def join_team(self, team_name,team_name1,team_name2):
         self.team_name = team_name
         self.search_and_click(team_name)
+        self.search_and_click(team_name1)
+        self.search_and_click(team_name2)
         sleep(2)
 
     def join_meeting(self):
@@ -79,19 +81,21 @@ class Teams:
 
 
 obj = Teams()
-# print("Starting teams!")
-# obj.start_teams()
-# print("Entereing email/password")
-# obj.login(email, password)
-# print("selecting menu")
-# obj.teams_menu()
-# print("Joining team")
-# obj.join_team('t')
+#print("Starting teams!")
+#obj.start_teams()
+#print("Entereing email/password")
+#obj.login(email, password)
+#sleep(10)
+#print("selecting menu")
+obj.teams_menu()
+print("Joining team")
+obj.join_team('t','trial','t2')
 print("Joining meeting")
 obj.join_meeting()
-# print("Stay online")
-# obj.stay_online()
-# print("leaving meating")
-# obj.leave_meeting()
+print("Stay online")
+obj.stay_online()
+print("leaving meeting")
+
+obj.leave_meeting()
 print("team menu")
 obj.teams_menu()
