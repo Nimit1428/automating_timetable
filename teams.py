@@ -49,7 +49,7 @@ class Teams:
     def teams_menu(self):
         self.search_and_click('teams')
 
-    def join_team(self, team_name,team_name1,team_name2):
+    def join_team(self, team_name, team_name1, team_name2):
         self.team_name = team_name
         self.search_and_click(team_name)
         self.search_and_click(team_name1)
@@ -80,22 +80,22 @@ class Teams:
         self.search_and_click('leave')
 
 
-obj = Teams()
-#print("Starting teams!")
-#obj.start_teams()
-#print("Entereing email/password")
-#obj.login(email, password)
-#sleep(10)
-#print("selecting menu")
-obj.teams_menu()
-print("Joining team")
-obj.join_team('t','trial','t2')
-print("Joining meeting")
-obj.join_meeting()
-print("Stay online")
-obj.stay_online()
-print("leaving meeting")
+# obj = Teams()
+# print("Starting teams!")
+# obj.start_teams()
+# print("Entereing email/password")
+# obj.login(email, password)
+# sleep(10)
+# print("selecting menu")
+# obj.teams_menu()
+# print("Joining team")
+# obj.join_team('t', 'trial', 't2')
+# print("Joining meeting")
+# obj.join_meeting()
+# print("Stay online")
+# obj.stay_online()
+# print("leaving meeting")
 
-obj.leave_meeting()
-print("team menu")
-obj.teams_menu()
+# obj.leave_meeting()
+# print("team menu")
+# obj.teams_menu()
