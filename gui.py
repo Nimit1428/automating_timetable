@@ -59,7 +59,7 @@ class WingMan:
         self.wingman.geometry('700x500')
 
         teams = ImageTk.PhotoImage(Image.open(
-            "../gui/Logo/teams.png"), width="225", height="225")
+            "./gui/Logo/teams.png"), width="225", height="225")
         tms = Button(self.wingman, image=teams)
         tms.pack(side="left", fill="none", expand="no")
 

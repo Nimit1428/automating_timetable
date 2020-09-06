@@ -16,6 +16,8 @@ class Teams:
             pag.moveTo(x=center.x, y=center.y, duration=0.2)
             pag.click(button='left', clicks=1)
             sleep(1)
+        else:
+            print(loc, "not found!")
 
     def maximize(self):
         pag.keyDown('alt')
@@ -30,7 +32,7 @@ class Teams:
         pag.write('teams', interval=0.25)
         pag.press('enter')
         sleep(7)
-        self.maximize()
+        # self.maximize()
 
     def login(self, email, password):
         sleep(3)
@@ -57,26 +59,32 @@ class Teams:
     def join_meeting(self):
         sleep(2)
         self.search_and_click('join')
+        self.search_and_click('join2')
         sleep(1)
         self.search_and_click('video1')
         self.search_and_click('audio')
+        sleep(1)
         self.search_and_click('join_now')
-        self.maximize()
+        self.search_and_click('ifmute')
+        # self.maximize()
 
     def stay_online(self):
         # self.start_time=start_time
         # self.end_time=end_time
         # duration=60-start_time
         # duration*=60
-        duration = 5
+        duration = 30
         while duration >= 0:
-            sleep(3)
+            sleep(10)
+            print("in the meeting vibing")
             pag.moveTo(500, 150, 2)
-            duration = duration - 3
+            duration = duration - 10
 
     def leave_meeting(self):
         self.search_and_click('leave')
 
+    def cross(self):
+        pag.press()
 
 # obj = Teams()
 # print("Starting teams!")
@@ -87,7 +95,7 @@ class Teams:
 # print("selecting menu")
 # obj.teams_menu()
 # print("Joining team")
-# obj.join_team('trial')
+# obj.join_team('t')
 # print("Joining meeting")
 # obj.join_meeting()
 # print("Stay online")

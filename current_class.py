@@ -6,7 +6,7 @@ def current(df_sample):
     current_time = now.strftime("%I")
     # print(current_time)
     current_day = now.strftime("%a")
-    current_class=''
+    current_class = ''
 
     for i in range(len(df_sample['Time'])):
         # temp=df_sample[current_day][i]

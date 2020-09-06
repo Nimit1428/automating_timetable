@@ -47,33 +47,42 @@ from set_timetable import df_sample
 
 def main():
     teams = Teams()
-    
+
     gui = WingMan()
     gui.homescreen()
-    user_details=gui.returnDetails()
-    loginStatus=user_details[0]
-    email=user_details[1]
-    password=user_details[2]
+    user_details = gui.returnDetails()
+    loginStatus = user_details[0]
+    email = user_details[1]
+    password = user_details[2]
 
     teams.start_teams()
 
     if(loginStatus):
         teams.login(email, password)
-    
+
     teams.teams_menu()
-    pag.alert("The school has started!!")
-    #hours while the loop will run
-    h=len(df_sample['Time'])
+    # hours while the loop will run
+    h = len(df_sample['Time'])
     while(h):
         ongoing_class = current(df_sample)
         if (ongoing_class != 'NaN'):
+            print("joining team")
             teams.join_team(ongoing_class)
+            print("joining meeting")
             teams.join_meeting()
+            print("In the meeting")
+            pag.alert("You are in the meeting")
+            print("")
+            print("to stay online")
             teams.stay_online()
+            print("leaving meeting")
+            teams.leave_meeting()
+            print("clicking print menu")
             teams.teams_menu()
         else:
             pag.alert("You have a free period! Join!")
-        h-=1
+        h -= 1
     pag.alert("You are done with today's classes!")
+
 
 main()

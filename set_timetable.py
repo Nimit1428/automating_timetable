@@ -20,8 +20,9 @@ import time
 
 # df = pd.DataFrame(tt)
 
-x = {'Time': ['12 to 01', '1 to 7', '2 to 8'], 'Sat': [
-    'trial', 'NaN', 'Aztechs'], 'Sun': ['Nan', 'trial', 'Aztechs']}
+x = {'Time': ['12 to 01', '1 to 7', '3 to 8'], 'Sat': [
+    'trial', 'NaN', 'Aztechs'], 'Sun': ['Nan', 't', 't']}
 df_sample = DataFrame(x)
+print(len(df_sample))
 
 # print(df_sample)
